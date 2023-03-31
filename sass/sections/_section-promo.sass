@@ -1,0 +1,64 @@
+.section-promo
+    color: $secondary-color
+    padding: 60px 0 
+    .section-inner 
+        flex-direction: column  
+        height: auto
+        .promo-container
+            display: flex
+            text-align: start
+            .video-preview-container
+                @include flex_center()
+                .video-preview
+                    @include flex_center()   
+                    width: 500px
+                    height: 400px
+                    background-image: url('../img/promo.png')
+                    background-size: cover
+                    border-radius: 10px
+                    margin: 20px 0
+                    background-position: center
+                    .btn-play
+                        @include flex_center()  
+                        height: 50px
+                        width: 50px
+                        border-radius: 50%
+                        font-size: 15px
+                        background-image: $primary-btn-gradient
+                        color: $primary-color
+                        opacity: 1
+                        transition: .6s
+                        cursor: pointer
+                        &:hover
+                            opacity: 0.7        
+            .promo-name
+                font-size: $primary-h-size
+                margin-bottom: 40px
+            .promo-content
+                .promo-content-section
+                    @include el($mt:20px)
+                    margin-top: 20px
+                    .promo-content-name
+                        font-size: 25px
+                    .promo-section-content
+                        max-width: 60%
+                        color: $secondary-gray-color
+        .promo-feauters
+            @include flex_center(30px)
+            height: 35%
+            border-top: 1px solid #c7c7c7
+            margin-top: 10px
+            .feauter
+                @include flex_center(30px)
+                flex-direction: column
+                border-bottom: 1px solid #c7c7c7
+                padding: 20px
+                i.fa
+                    font-size: 50px
+                    background-image: $primary-btn-gradient
+                    @include text_gradient()
+                    &:hover
+                        font-size: 50px
+                        animation: .3s shake cubic-bezier(0.6, -0.28, 0.735, 0.045)              
+                p
+                    color: $secondary-gray-color

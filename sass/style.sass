@@ -1,0 +1,42 @@
+@import '_mixins.sass'
+@import '_constants.sass'
+
+*::-webkit-scrollbar 
+    width: 10px 
+    height: 10px
+
+*::-webkit-scrollbar-track 
+    background-color: rgb(255, 255, 255)
+
+*::-webkit-scrollbar-thumb 
+    background-color: rgb(131, 174, 240)
+    border-radius: 2px
+
+body
+    font-family: $lato
+    color: $primary-color
+    font-size: $primary-size
+    line-height: 40px
+
+.section-inner
+    @include el($m:0 auto, $w:80%, $h:100vh, $ta:center,$z:1)
+
+.section-darker
+    @include el($w:100%, $h:100%, $ps:a, $t:0, $bgc:rgba(0,0,0,0.5),$z:0)
+
+@import 'sections/_section-intro.sass'
+@import 'sections/_section-promo.sass'
+@import 'sections/_section-founder.sass'
+@import 'sections/_section-plans.sass'
+@import 'sections/_section-free.sass'
+@import 'sections/_footer.sass'
+@import '_media.sass'        
+
+             
+            
+
+
+        
+
+    
+    

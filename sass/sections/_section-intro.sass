@@ -1,0 +1,44 @@
+.section-intro
+    position: relative
+    background-image: url('../img/intro.png')
+    background-size: cover
+    background-position: center
+    .intro-name
+        position: absolute
+        top: 20px
+        pointer-events: none
+        flex-shrink: 1
+    .intro-container
+        @include flex_center()
+        height: 100%
+        flex-direction: column
+        flex-grow: 1
+        .intro-content
+            margin-bottom: 40px
+            .intro-header
+                font-size: 60px
+                margin-bottom: 50px
+                line-height: 60px
+            .intro-description
+                margin: 0 auto
+                min-width: 70%
+        .intro-form
+            @include flex_center(20px)
+            font-size: 14px
+            width: 70%
+            flex-wrap: wrap     
+            input
+                color: $primary-color
+                height: 40px
+                flex: 1
+                background-color: rgba(184, 184, 184, 0.5)
+                border-radius: 5px
+                padding: 10px
+                transition: .4s
+                &::placeholder
+                    color: white
+                &:focus
+                    @include el($bgc:rgba(192, 192, 192, 0.8)) 
+            button
+                width: 150px
+                height: 40px           

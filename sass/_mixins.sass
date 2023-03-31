@@ -1,0 +1,193 @@
+@mixin flex_center($gap: 0)
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: $gap
+
+@mixin absolute_center()
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin text_gradient()
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+@mixin close_button_position()
+    top: 0
+    right: 0
+    position: absolute
+
+@mixin el($fwr: false, $ac: false, $lh: false, $fw: false, $cu: false, $o: false, $a: false, $g: false, $mw: false, $f: false, $fsh: false, $fg: false, $tr: false, $z: false, $phc: false, $bgp: false, $bgi: false, $bgs: false, $ta: false, $fd: false, $ff: false, $w: false, $h: false, $bor: false, $p: false, $d: false, $m: false, $c: false, $bg: false, $t: false, $b: false, $bgc: false, $r: false, $l: false, $mt: false, $mb: false, $mr: false, $ml: false, $ps: false, $jc: false, $ai: false, $pe: false, $tt: false, $fs: false, $bo: false, $bt: false, $bl: false, $br: false, $bb: false)
+    @if $bgs
+        background-size: $bgs
+        background-repeat: no-repeat
+    @if $a
+        animation: $a
+    @if $fwr
+        flex-wrap: $fwr
+    @if $o
+        opacity: $o
+    @if $w
+        width: $w
+    @if $g
+        gap: $g
+    @if $mw
+        max-width: $mw
+    @if $tr
+        transition: $tr
+    @if $phc
+        &::placeholder
+            color: $phc
+    @if $bgp
+        background-position: $bgp
+    @if $h
+        height: $h
+    @if $f
+        flex: $f
+    @if $bgi
+        background-image: $bgi
+    @if $ff
+        font-family: $ff
+    @if $ta
+        text-align: $ta
+    @if $p
+        padding: $p
+    @if $bor
+        border-radius: $bor
+    @if $fs
+        font-size: $fs
+    @if $fg
+        flex-grow: $fg
+    @if $fsh
+        flex-shrink: $fsh
+    @if $z
+        z-index: $z
+        position: relative
+    @if $fd
+        @if $fd == c
+            flex-direction: column
+        @else
+            flex-direction: $fd
+    @if $pe
+        @if $pe == n
+            pointer-events: none 
+        @else 
+            pointer-events: $pe
+    @if $ac
+        flex-wrap: wrap
+        @if $ac == c
+            align-content: center 
+        @else if $ac == sb
+            align-content: space-between 
+        @else if $ac == sa
+            align-content: space-around 
+        @else if $ac == s
+            align-content: space-around 
+        @else 
+            align-content: $ac
+    @if $ps
+        @if $ps == a
+            position: absolute 
+        @else if $ps == s
+            position: static 
+        @else if $ps == r
+            position: relative 
+        @else if $ps == f
+            position: fixed 
+        @else if $ps == st
+            position: sticky 
+        @else 
+            position: $d 
+    @if $d
+        @if $d == f
+            display: flex 
+        @else if $d == b
+            display: block 
+        @else if $d == i
+            display: inline 
+        @else if $d == ib
+            display: inline-block 
+        @else 
+            display: $d 
+    @if $b
+        bottom: $b
+    @if $t
+        top: $t
+    @if $m
+        margin: $m
+    @if $bg
+        background: $bg
+    @if $c
+        color: $c
+    @if $bo
+        border: $bo
+    @if $lh
+        line-height: $lh
+    @if $fw
+        @if $fw == b
+            font-weight: bold 
+        font-weight: $fw
+    @if $bb
+        border-bottom: $bb
+    @if $bt
+        border-top: $bt
+    @if $br
+        border-right: $br
+    @if $bl
+        border-left: $bl
+    @if $bgc
+        background-color: $bgc
+    @if $r
+        right: $r
+    @if $l
+        left: $l
+    @if $ml
+        margin-left: $ml
+    @if $mr
+        margin-right: $mr
+    @if $mb
+        margin-bottom: $mb
+    @if $mt
+        margin-top: $mt
+    @if $cu
+        @if $cu == p
+            cursor: pointer 
+        cursor: $cu
+    @if $jc
+        @if $jc == sb
+            justify-content: space-between 
+        @else if $jc == sa
+            justify-content: space-around 
+        @else if $jc == c
+            justify-content: center 
+        @else if $jc == se
+            justify-content: space-evenly 
+        @else 
+            justify-content: $jc
+    @if $ai
+        @if $ai == s
+            align-items: start
+        @else if $ai == e
+            align-items: end
+        @else if $ai == c
+            align-items: center 
+        @else 
+            align-items: $ai
+    @if $tt
+        @if $tt == u
+            text-transform: uppercase
+        @else if $tt == l
+            text-transform: lowercase
+        @else if $tt == c
+            text-transform: capitalize
+        @else 
+            text-transform: $ai
+
+@function darker($color, $tone)
+    $adjust: -16*$tone
+    @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust)
+
+@function lighter($color, $tone)
+    $adjust: 16*$tone
+    @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust)

@@ -1,0 +1,26 @@
+$lato: 'Lato', sans-serif
+$montserrat: 'Montserrat', sans-serif
+$primary-color: white
+$secondary-color: #1d1d1d
+$secondary-gray-color: #555555
+$primary-btn-gradient: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)
+$primary-size: 19px
+$primary-h-size: 30px
+
+.base-btn
+    @include flex_center()    
+    border-radius: 5px
+    color: $primary-color
+    background-image: $primary-btn-gradient
+    &:hover
+        background-image: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 100%)
+
+@keyframes shake 
+    0%
+        rotate: 0
+    25%
+        rotate: 30deg
+    50%
+        rotate: 0
+    75%
+        rotate: -30deg
