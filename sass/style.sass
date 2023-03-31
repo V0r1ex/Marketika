@@ -18,11 +18,24 @@ body
     font-size: $primary-size
     line-height: 40px
 
+h1, h2, h3, h4, h5, h6 
+    font-family: $montserrat
+
 .section-inner
-    @include el($m:0 auto, $w:80%, $h:100vh, $ta:center,$z:1)
+    margin: 0 auto
+    width: 80%
+    height: 100vh
+    text-align: center
+    position: relative
+    z-index: 1
 
 .section-darker
-    @include el($w:100%, $h:100%, $ps:a, $t:0, $bgc:rgba(0,0,0,0.5),$z:0)
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    background-color: rgba(0,0,0,0.5)
+    z-index: 0
 
 @import 'sections/_section-intro.sass'
 @import 'sections/_section-promo.sass'
